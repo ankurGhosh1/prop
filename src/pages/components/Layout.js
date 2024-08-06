@@ -11,9 +11,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main className={`flex flex-col items-center p-24 ${inter.className}`}>
-        {children}
-      </main>
+      <main className={`${inter.className}`}>{children}</main>
       <Footer />
     </>
   );

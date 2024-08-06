@@ -1,11 +1,11 @@
-// pages/Properties.js
+// pages/location.js
 import { NextSeo } from "next-seo";
 import { fetchPosts } from "../../lib/airtableapi";
 import Layout from "../components/Layout";
 import Link from "next/link";
 
-const Properties = ({ posts }) => {
-  console.log(posts);
+const Location = ({ posts }) => {
+  // console.log(posts);
   return (
     <Layout>
       <NextSeo
@@ -57,12 +57,12 @@ const Properties = ({ posts }) => {
           },
         }}
       />
-      <h1 className="text-5xl pb-12">All Properties</h1>
+      <h1 className="text-5xl pb-12">All Location</h1>
       <div className="grid grid-cols-3">
         {posts.map((post) => (
-          <Link href={`/properties/${post.fields.slug}`} key={post.id}>
-            <h2 className="text-2xl pb-3">{post.fields.Name}</h2>
-            <p>{post.fields.Content}</p>
+          <Link href={`/location/${post.fields.slug}`} key={post.id}>
+            <h2 className="text-2xl pb-3">{post.fields.name}</h2>
+            <p>{post.fields.description}</p>
           </Link>
         ))}
       </div>
@@ -70,7 +70,7 @@ const Properties = ({ posts }) => {
   );
 };
 
-export default Properties;
+export default Location;
 
 export async function getServerSideProps() {
   const posts = await fetchPosts();

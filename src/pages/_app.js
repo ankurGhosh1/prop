@@ -5,8 +5,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <NextSeo
-        title="Default Title"
-        description="Default description for the site."
+        title="Best Driving School"
+        description="Best Driving Schools"
         openGraph={{
           type: "website",
           locale: "en_US",

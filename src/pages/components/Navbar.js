@@ -22,10 +22,10 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              href="/properties"
+              href="/location"
               className="text-white inline-flex items-center px-1 pt-1 text-sm font-medium"
             >
-              Properties
+              Location
             </Link>
             <Link
               href="/contact"
@@ -81,10 +81,10 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href="/properties"
+            href="/location"
             className="text-gray-900 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium hover:bg-gray-50"
           >
-            Properties
+            Location
           </Link>
           <Link
             href="/contact"

@@ -2,7 +2,7 @@
 import base from "../../airtable";
 
 export async function fetchPosts() {
-  const records = await base("Properties").select({ view: "Grid view" }).all();
+  const records = await base("Locations").select({ view: "Grid view" }).all();
   return records.map((record) => ({
     id: record.id,
     fields: record.fields,
@@ -10,7 +10,7 @@ export async function fetchPosts() {
 }
 
 export async function fetchPost(id) {
-  const record = await base("Properties").find(id);
+  const record = await base("Locations").find(id);
   return {
     id: record.id,
     fields: record.fields,
@@ -18,7 +18,7 @@ export async function fetchPost(id) {
 }
 
 export async function fetchPostBySlug(slug) {
-  const records = await base("Properties")
+  const records = await base("Locations")
     .select({
       filterByFormula: `{slug} = '${slug}'`,
       maxRecords: 1,
