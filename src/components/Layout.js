@@ -1,6 +1,6 @@
 // src/app/Layout.js
 import { DefaultSeo } from "next-seo";
-import SEO from "../../next-seo.config";
+import SEO from "../next-seo.config";
 import { Inter } from "next/font/google";
 import Footer from "./Footer";
 import Navbar from "./Navbar";

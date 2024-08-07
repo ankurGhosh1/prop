@@ -1,7 +1,7 @@
 // pages/location.js
 import { NextSeo } from "next-seo";
 import { fetchPosts } from "../../lib/airtableapi";
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 import Link from "next/link";
 
 const Location = ({ posts }) => {

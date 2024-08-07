@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Layout from "./components/Layout";
+import Layout from "../components/Layout";
 import { NextSeo } from "next-seo";
 
 export default function Home() {
