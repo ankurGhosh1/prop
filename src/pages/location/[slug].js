@@ -169,6 +169,21 @@ export default function LocationPage({ post }) {
               </div>
             </div>
           </div>
+
+          {/* selection process */}
+
+          <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8">
+            <div>
+              <h3 className="text-2xl">Our Selection Criteria</h3>
+              <p>
+                Our goal is to connect property owners with the best property
+                management company to ensure your investments continue to
+                flourish. We scored property management companies on over 30
+                different variables to provide you a hand-picked list of the
+                best property management companies in the Auburn area.
+              </p>
+            </div>
+          </div>
         </div>
       </Container>
     </Layout>
