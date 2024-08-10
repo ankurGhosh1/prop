@@ -1,5 +1,5 @@
 // src/app/blog/[id]/page.js
-import { NextSeo } from "next-seo";
+import { NextSeo, ArticleJsonLd } from "next-seo";
 import { fetchPostBySlug } from "../../lib/airtableapi";
 import Layout from "../../components/Layout";
 import Container from "../../components/Container";
@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  console.log(post.fields);
+  // console.log(post.fields);
   return (
     <Layout>
       <NextSeo
