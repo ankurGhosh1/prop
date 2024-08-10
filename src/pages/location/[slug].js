@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  // console.log(post.fields);
+  console.log(post.fields);
   return (
     <Layout>
       <NextSeo
@@ -85,10 +85,7 @@ export default function LocationPage({ post }) {
           <div className="py-12 px-8 bg-medDark">
             <div className="flex gap-8 max-md:flex-col items-center">
               <div>
-                <Heading1>
-                  The Best Property Management Companies in Auburn, Alabama of
-                  2024
-                </Heading1>
+                <Heading1>{post.fields.heading_h1}</Heading1>
                 <div className="h-[.1rem] w-24 bg-orange mb-6 max-sm:m-auto"></div>
                 <p className="text-gray max-sm:pt-5 max-sm:text-center text-base">
                   {post.fields.description}
@@ -107,7 +104,7 @@ export default function LocationPage({ post }) {
             <div className="bg-white p-5 w-3/4 rounded-xl max-md:w-full max-md:mx-5">
               <p className="text-lg">Our picks</p>
               <div className="h-[.1rem] w-full bg-orange my-3"></div>
-              <div className="flex items-center justify-between max-sm:flex-col max-sm:items-start">
+              <div className="flex flex-col items-start justify-between max-sm:flex-col max-sm:items-start">
                 <Link
                   className="flex items-center gap-4 "
                   href={`https://${
@@ -122,6 +119,9 @@ export default function LocationPage({ post }) {
                   />
                   <p className="text-xl">
                     {post.fields[`company_name (from Company 1)`]}
+                  </p>
+                  <p className="text-xl">
+                    {post.fields[`reviews (from Company 1)`]}
                   </p>
                 </Link>
 
@@ -278,9 +278,7 @@ export default function LocationPage({ post }) {
                   {post.fields[`number (from Company 1)`][0]}
                 </Link>
                 <Link
-                  href={`https://${
-                    post.fields[`website_url (from Company 1)`][0]
-                  }`}
+                  href={`//${post.fields[`website_url (from Company 1)`][0]}`}
                   className="p-3 bg-orange text-white w-[150px] text-center"
                 >
                   Visit Website
@@ -315,9 +313,7 @@ export default function LocationPage({ post }) {
                   {post.fields[`number (from Company 2)`][0]}
                 </Link>
                 <Link
-                  href={`https://${
-                    post.fields[`website_url (from Company 2)`][0]
-                  }`}
+                  href={`//${post.fields[`website_url (from Company 2)`][0]}`}
                   className="p-3 bg-orange text-white w-[150px] text-center"
                 >
                   Visit Website
@@ -352,9 +348,7 @@ export default function LocationPage({ post }) {
                   {post.fields[`number (from Company 3)`][0]}
                 </Link>
                 <Link
-                  href={`https://${
-                    post.fields[`website_url (from Company 3)`][0]
-                  }`}
+                  href={`//${post.fields[`website_url (from Company 3)`][0]}`}
                   className="p-3 bg-orange text-white w-[150px] text-center"
                 >
                   Visit Website
@@ -369,6 +363,251 @@ export default function LocationPage({ post }) {
                 </address>
                 <p className="text-dark text-base max-w-[750px] mt-8">
                   {post.fields["company_description (from Company 3)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 4 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 4)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 4)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 4)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 4)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 4)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 4)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 4)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 5 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 5)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 5)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 5)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 5)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 5)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 5)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 5)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 6 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 6)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 6)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 6)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 6)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 6)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 6)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 6)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 7 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 7)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 7)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 7)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 7)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 7)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 7)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 7)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 8 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 8)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 8)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 8)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 8)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 8)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 8)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 8)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 9 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 9)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 9)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 9)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 9)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 9)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 9)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 9)"][0]}
+                </p>
+              </div>
+            </div>
+
+            {/* company 10 */}
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
+                <Image
+                  src={post.fields[`logo (from Company 10)`][0]}
+                  width={120}
+                  height={120}
+                  className="border border-dark rounded-full"
+                />
+                <Link
+                  href={`tel:${post.fields[`number (from Company 10)`][0]}`}
+                  className="p-3 border border-orange w-[150px] text-center"
+                >
+                  {post.fields[`number (from Company 10)`][0]}
+                </Link>
+                <Link
+                  href={`//${post.fields[`website_url (from Company 10)`][0]}`}
+                  className="p-3 bg-orange text-white w-[150px] text-center"
+                >
+                  Visit Website
+                </Link>
+              </div>
+              <div>
+                <h1 className="text-3xl text-dark font-medium mb-2">
+                  {post.fields["company_name (from Company 10)"][0]}
+                </h1>
+                <address className="text-orange text-sm">
+                  {post.fields["address (from Company 10)"][0]}
+                </address>
+                <p className="text-dark text-base max-w-[750px] mt-8">
+                  {post.fields["company_description (from Company 10)"][0]}
                 </p>
               </div>
             </div>
