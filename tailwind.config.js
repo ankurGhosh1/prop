@@ -20,6 +20,7 @@ module.exports = {
         white: "#fff",
         gray: "#E8F1F2",
         textGray: "#7c8198",
+        orange: "#ea8b57",
       },
       screens: {
         "max-lg": { max: "1024px" },
