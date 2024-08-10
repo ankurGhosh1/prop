@@ -36,7 +36,7 @@ export default function LocationPage({ post }) {
         title={post.fields.meta_title}
         description={post.fields.meta_description}
         openGraph={{
-          url: post.fields.slug,
+          url: `https://www.myblog.com/location/${post.fields.slug}`,
           title: post.fields.meta_title,
           description: post.fields.meta_description,
           images: [
@@ -57,29 +57,21 @@ export default function LocationPage({ post }) {
         additionalLinkTags={[
           {
             rel: "canonical",
-            href: "https://www.myblog.com/blog",
+            href: `https://www.myblog.com/location/${post.fields.slug}`,
           },
         ]}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Webpage",
-          name: post.fields.meta_title,
-          description: post.fields.meta_description,
-          url: post.fields.slug,
-          image: post.fields.banner_image,
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": "https://www.myblog.com/blog",
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "My Blog",
-            logo: {
-              "@type": "ImageObject",
-              url: "https://www.myblog.com/logo.jpg",
-            },
-          },
-        }}
+      />
+
+      <ArticleJsonLd
+        url={`https://www.myblog.com/location/${post.fields.slug}`}
+        title={post.fields.meta_title}
+        images={[post.fields.banner_image]}
+        datePublished={post.fields.publish_date}
+        dateModified={post.fields.modified_date || post.fields.publish_date}
+        authorName="Author Name"
+        publisherName="My Blog"
+        publisherLogo="https://www.myblog.com/logo.jpg"
+        description={post.fields.meta_description}
       />
       <Container>
         <div className="rounded-xl bg-gray my-16">
@@ -172,7 +164,7 @@ export default function LocationPage({ post }) {
 
           {/* selection process */}
 
-          <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange">
+          <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange max-lg:grid-cols-1">
             <div>
               <h3 className="text-5xl text-white pb-4 leading-normal">
                 Our Selection Criteria
@@ -186,8 +178,8 @@ export default function LocationPage({ post }) {
               </p>
             </div>
 
-            <div className="grid grid-cols-[.5fr_1fr] bg-gray rounded-xl p-8 divide-x divide-orange">
-              <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-[.5fr_1fr] bg-gray rounded-xl p-8 divide-x gap-4 divide-orange max-sm:grid-cols-1 max-sm:divide-x-0 ">
+              <div className="flex flex-col gap-4 max-sm:m-auto">
                 <div className="flex gap-2 items-center">
                   <Image src="/process.svg" width={50} height={80}></Image>
                   <div>
@@ -271,8 +263,8 @@ export default function LocationPage({ post }) {
             </h2>
 
             {/* company 1 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 rounded-xl my-8">
-              <div className="flex flex-col gap-4 items-center">
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
                 <Image
                   src={post.fields[`logo (from Company 1)`][0]}
                   width={120}
@@ -308,8 +300,8 @@ export default function LocationPage({ post }) {
             </div>
 
             {/* company 2 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 rounded-xl my-8">
-              <div className="flex flex-col gap-4 items-center">
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
                 <Image
                   src={post.fields[`logo (from Company 2)`][0]}
                   width={120}
@@ -345,8 +337,8 @@ export default function LocationPage({ post }) {
             </div>
 
             {/* company 3 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 rounded-xl my-8">
-              <div className="flex flex-col gap-4 items-center">
+            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
+              <div className="flex flex-col gap-4 items-center max-sm:items-start">
                 <Image
                   src={post.fields[`logo (from Company 3)`][0]}
                   width={120}
