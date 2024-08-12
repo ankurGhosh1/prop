@@ -8,6 +8,8 @@ import Image from "next/image";
 import useMediaMatch from "../../hook/useMediaMatch";
 import Heading1 from "@/components/Heading1";
 import Link from "next/link";
+import CompanyCard from "@/components/CompanyCard";
+import RatingStars from "@/components/Star";
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
@@ -29,7 +31,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  console.log(post.fields);
+  // console.log(post.fields);
   return (
     <Layout>
       <NextSeo
@@ -102,68 +104,105 @@ export default function LocationPage({ post }) {
           {/* top picks */}
           <div className="flex items-center justify-center py-8 bg-medDark">
             <div className="bg-white p-5 w-3/4 rounded-xl max-md:w-full max-md:mx-5">
-              <p className="text-lg">Our picks</p>
-              <div className="h-[.1rem] w-full bg-orange my-3"></div>
-              <div className="flex flex-col items-start justify-between max-sm:flex-col max-sm:items-start">
-                <Link
-                  className="flex items-center gap-4 "
-                  href={`https://${
-                    post.fields[`website_url (from Company 1)`][0]
-                  }`}
-                  target="_blank"
-                >
-                  <Image
-                    src={post.fields[`logo (from Company 1)`][0]}
-                    width={60}
-                    height={60}
-                  />
-                  <p className="text-xl">
-                    {post.fields[`company_name (from Company 1)`]}
-                  </p>
-                  <p className="text-xl">
-                    {post.fields[`reviews (from Company 1)`]}
-                  </p>
-                </Link>
-
-                <Link
-                  className="flex items-center gap-4"
-                  href={`https://${
-                    post.fields[`website_url (from Company 2)`][0]
-                  }`}
-                  target="_blank"
-                >
-                  <Image
-                    src={post.fields[`logo (from Company 2)`][0]}
-                    width={60}
-                    height={60}
-                  />
-                  <p className="text-xl">
-                    {post.fields[`company_name (from Company 2)`]}
-                  </p>
-                </Link>
-
-                <Link
-                  className="flex items-center gap-4"
-                  href={`https://${
-                    post.fields[`website_url (from Company 3)`][0]
-                  }`}
-                  target="_blank"
-                >
-                  <Image
-                    src={post.fields[`logo (from Company 3)`][0]}
-                    width={60}
-                    height={60}
-                  />
-                  <p className="text-xl">
-                    {post.fields[`company_name (from Company 3)`]}
-                  </p>
-                </Link>
-              </div>
+              <p className="text-2xl font-bold">Our top picks</p>
+              <table className="min-w-full divide-y divide-gray-200">
+                <tbody className="bg-white divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <Image
+                        src={
+                          post.fields[`logo (from Company 1)`]
+                            ? post.fields[`logo (from Company 1)`][0]
+                            : ""
+                        }
+                        width={60}
+                        height={60}
+                      />
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <p className="text-xl">
+                        {post.fields[`company_name (from Company 1)`]
+                          ? post.fields[`company_name (from Company 1)`]
+                          : null}
+                      </p>
+                    </td>
+                    <td>
+                      <RatingStars
+                        rating={
+                          post.fields[`rating (from Company 1)`]
+                            ? post.fields[`rating (from Company 1)`]
+                            : null
+                        }
+                        maxRating={5}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <Image
+                        src={
+                          post.fields[`logo (from Company 2)`]
+                            ? post.fields[`logo (from Company 2)`][0]
+                            : ""
+                        }
+                        width={60}
+                        height={60}
+                      />
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <p className="text-xl">
+                        {post.fields[`company_name (from Company 2)`]
+                          ? post.fields[`company_name (from Company 2)`]
+                          : null}
+                      </p>
+                    </td>
+                    <td>
+                      <RatingStars
+                        rating={
+                          post.fields[`rating (from Company 2)`]
+                            ? post.fields[`rating (from Company 2)`]
+                            : null
+                        }
+                        maxRating={5}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <Image
+                        src={
+                          post.fields[`logo (from Company 3)`]
+                            ? post.fields[`logo (from Company 3)`][0]
+                            : ""
+                        }
+                        width={60}
+                        height={60}
+                      />
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <p className="text-xl">
+                        {post.fields[`company_name (from Company 3)`]
+                          ? post.fields[`company_name (from Company 3)`]
+                          : null}
+                      </p>
+                    </td>
+                    <td>
+                      <RatingStars
+                        rating={
+                          post.fields[`rating (from Company 3)`]
+                            ? post.fields[`rating (from Company 3)`]
+                            : null
+                        }
+                        maxRating={5}
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
 
           {/* selection process */}
-
           <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange max-lg:grid-cols-1">
             <div>
               <h3 className="text-5xl text-white pb-4 leading-normal">
@@ -256,361 +295,149 @@ export default function LocationPage({ post }) {
           </div>
 
           {/* Companies */}
-
           <div className="py-3 px-8">
             <h2 className="text-3xl leading-normal text-dark font-medium pt-4">
               {post.fields.heading_h2}
             </h2>
-
             {/* company 1 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 1)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 1)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 1)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 1)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 1)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 1)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 1)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_1 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 1)`][0]}
+                phone={post.fields[`number (from Company 1)`][0]}
+                url={post.fields[`website_url (from Company 1)`][0]}
+                name={post.fields["company_name (from Company 1)"][0]}
+                address={post.fields["address (from Company 1)"][0]}
+                description={
+                  post.fields["company_description (from Company 1)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 2 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 2)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 2)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 2)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 2)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 2)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 2)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 2)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_2 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 2)`][0]}
+                phone={post.fields[`number (from Company 2)`][0]}
+                url={post.fields[`website_url (from Company 2)`][0]}
+                name={post.fields["company_name (from Company 2)"][0]}
+                address={post.fields["address (from Company 2)"][0]}
+                description={
+                  post.fields["company_description (from Company 2)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 3 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 3)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 3)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 3)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 3)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 3)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 3)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 3)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_3 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 3)`][0]}
+                phone={post.fields[`number (from Company 3)`][0]}
+                url={post.fields[`website_url (from Company 3)`][0]}
+                name={post.fields["company_name (from Company 3)"][0]}
+                address={post.fields["address (from Company 3)"][0]}
+                description={
+                  post.fields["company_description (from Company 3)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 4 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 4)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 4)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 4)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 4)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 4)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 4)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 4)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_4 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 4)`][0]}
+                phone={post.fields[`number (from Company 4)`][0]}
+                url={post.fields[`website_url (from Company 4)`][0]}
+                name={post.fields["company_name (from Company 4)"][0]}
+                address={post.fields["address (from Company 4)"][0]}
+                description={
+                  post.fields["company_description (from Company 4)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 5 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 5)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 5)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 5)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 5)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 5)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 5)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 5)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_5 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 5)`][0]}
+                phone={post.fields[`number (from Company 5)`][0]}
+                url={post.fields[`website_url (from Company 5)`][0]}
+                name={post.fields["company_name (from Company 5)"][0]}
+                address={post.fields["address (from Company 5)"][0]}
+                description={
+                  post.fields["company_description (from Company 5)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 6 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 6)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 6)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 6)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 6)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 6)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 6)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 6)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_6 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 6)`][0]}
+                phone={post.fields[`number (from Company 6)`][0]}
+                url={post.fields[`website_url (from Company 6)`][0]}
+                name={post.fields["company_name (from Company 6)"][0]}
+                address={post.fields["address (from Company 6)"][0]}
+                description={
+                  post.fields["company_description (from Company 6)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 7 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 7)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 7)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 7)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 7)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 7)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 7)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 7)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_7 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 7)`][0]}
+                phone={post.fields[`number (from Company 7)`][0]}
+                url={post.fields[`website_url (from Company 7)`][0]}
+                name={post.fields["company_name (from Company 7)"][0]}
+                address={post.fields["address (from Company 7)"][0]}
+                description={
+                  post.fields["company_description (from Company 7)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 8 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 8)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 8)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 8)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 8)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 8)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 8)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 8)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_8 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 8)`][0]}
+                phone={post.fields[`number (from Company 8)`][0]}
+                url={post.fields[`website_url (from Company 8)`][0]}
+                name={post.fields["company_name (from Company 8)"][0]}
+                address={post.fields["address (from Company 8)"][0]}
+                description={
+                  post.fields["company_description (from Company 8)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 9 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 9)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 9)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 9)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 9)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 9)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 9)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 9)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_9 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 9)`][0]}
+                phone={post.fields[`number (from Company 9)`][0]}
+                url={post.fields[`website_url (from Company 9)`][0]}
+                name={post.fields["company_name (from Company 9)"][0]}
+                address={post.fields["address (from Company 9)"][0]}
+                description={
+                  post.fields["company_description (from Company 9)"][0]
+                }
+              />
+            ) : null}
 
             {/* company 10 */}
-            <div className="grid grid-cols-[200px_1fr] bg-white p-8 gap-4 rounded-xl my-8 max-sm:grid-cols-1">
-              <div className="flex flex-col gap-4 items-center max-sm:items-start">
-                <Image
-                  src={post.fields[`logo (from Company 10)`][0]}
-                  width={120}
-                  height={120}
-                  className="border border-dark rounded-full"
-                />
-                <Link
-                  href={`tel:${post.fields[`number (from Company 10)`][0]}`}
-                  className="p-3 border border-orange w-[150px] text-center"
-                >
-                  {post.fields[`number (from Company 10)`][0]}
-                </Link>
-                <Link
-                  href={`//${post.fields[`website_url (from Company 10)`][0]}`}
-                  className="p-3 bg-orange text-white w-[150px] text-center"
-                >
-                  Visit Website
-                </Link>
-              </div>
-              <div>
-                <h1 className="text-3xl text-dark font-medium mb-2">
-                  {post.fields["company_name (from Company 10)"][0]}
-                </h1>
-                <address className="text-orange text-sm">
-                  {post.fields["address (from Company 10)"][0]}
-                </address>
-                <p className="text-dark text-base max-w-[750px] mt-8">
-                  {post.fields["company_description (from Company 10)"][0]}
-                </p>
-              </div>
-            </div>
+            {post.fields.Company_10 ? (
+              <CompanyCard
+                image={post.fields[`logo (from Company 10)`][0]}
+                phone={post.fields[`number (from Company 10)`][0]}
+                url={post.fields[`website_url (from Company 10)`][0]}
+                name={post.fields["company_name (from Company 10)"][0]}
+                address={post.fields["address (from Company 10)"][0]}
+                description={
+                  post.fields["company_description (from Company 10)"][0]
+                }
+              />
+            ) : null}
           </div>
         </div>
       </Container>

@@ -36,26 +36,6 @@ const Location = ({ posts }) => {
             href: "https://www.myblog.com/blog",
           },
         ]}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Blog",
-          name: "My Blog",
-          description: "Read the latest posts on My Blog.",
-          url: "https://www.myblog.com/blog",
-          image: "https://www.myblog.com/blog-image.jpg",
-          mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": "https://www.myblog.com/blog",
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "My Blog",
-            logo: {
-              "@type": "ImageObject",
-              url: "https://www.myblog.com/logo.jpg",
-            },
-          },
-        }}
       />
       <h1 className="text-5xl pb-12">All Location</h1>
       <div className="grid grid-cols-3">
