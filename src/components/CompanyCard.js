@@ -25,6 +25,7 @@ function CompanyCard(props) {
           href={`${url ? url : null}`}
           className="p-3 bg-orange text-white w-[150px] text-center text-sm"
           target="_blank"
+          rel="nofollow"
         >
           Visit Website
         </Link>

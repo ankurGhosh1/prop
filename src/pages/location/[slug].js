@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  console.log(post.fields);
+  // console.log(post.fields);
   return (
     <Layout>
       <NextSeo
@@ -98,6 +98,7 @@ export default function LocationPage({ post }) {
                 // src="/badge.png"
                 width={match ? 350 : 320}
                 height={match ? 350 : 320}
+                alt={`Badge for ${post.fields.name}`}
               />
             </div>
           </div>
@@ -117,6 +118,7 @@ export default function LocationPage({ post }) {
                         }
                         width={60}
                         height={60}
+                        alt={post.fields[`company_name (from Company 1)`]}
                       />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -147,6 +149,7 @@ export default function LocationPage({ post }) {
                         }
                         width={60}
                         height={60}
+                        alt={post.fields[`company_name (from Company 2)`]}
                       />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -177,6 +180,7 @@ export default function LocationPage({ post }) {
                         }
                         width={60}
                         height={60}
+                        alt={post.fields[`company_name (from Company 3)`]}
                       />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -220,7 +224,12 @@ export default function LocationPage({ post }) {
             <div className="grid grid-cols-[.5fr_1fr] bg-gray rounded-xl p-8 divide-x gap-4 divide-orange max-sm:grid-cols-1 max-sm:divide-x-0 ">
               <div className="flex flex-col gap-4 max-sm:m-auto">
                 <div className="flex gap-2 items-center">
-                  <Image src="/process.svg" width={50} height={80}></Image>
+                  <Image
+                    src="/process.svg"
+                    width={50}
+                    height={80}
+                    alt="process-1"
+                  ></Image>
                   <div>
                     <p className="font-bold text-lg">
                       {post.fields.companies_reviewed}
@@ -229,14 +238,24 @@ export default function LocationPage({ post }) {
                   </div>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <Image src="/process-1.svg" width={50} height={80}></Image>
+                  <Image
+                    src="/process-1.svg"
+                    width={50}
+                    height={80}
+                    alt="process-2"
+                  ></Image>
                   <div>
                     <p className="font-bold text-lg">10</p>
                     <p className="text-sm">Companies Curated</p>
                   </div>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <Image src="/process-2.svg" width={50} height={80}></Image>
+                  <Image
+                    src="/process-2.svg"
+                    width={50}
+                    height={80}
+                    alt="process-3"
+                  ></Image>
                   <div>
                     <p className="font-bold text-lg">3</p>
                     <p className="text-sm">Top Picks</p>
@@ -245,7 +264,12 @@ export default function LocationPage({ post }) {
               </div>
               <div className="flex flex-col gap-4 px-5">
                 <div className="flex gap-2 items-start">
-                  <Image src="/process.svg" width={20} height={20}></Image>
+                  <Image
+                    src="/process.svg"
+                    width={20}
+                    height={20}
+                    alt="Reputation"
+                  ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
                       1. Reputation{" "}
@@ -257,7 +281,12 @@ export default function LocationPage({ post }) {
                 </div>
 
                 <div className="flex gap-2 items-start">
-                  <Image src="/process.svg" width={20} height={20}></Image>
+                  <Image
+                    src="/process.svg"
+                    width={20}
+                    height={20}
+                    alt="Credibility"
+                  ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
                       2. Credibility{" "}
@@ -269,7 +298,12 @@ export default function LocationPage({ post }) {
                 </div>
 
                 <div className="flex gap-2 items-start">
-                  <Image src="/process.svg" width={20} height={20}></Image>
+                  <Image
+                    src="/process.svg"
+                    width={20}
+                    height={20}
+                    alt="Experience"
+                  ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
                       3. Experience{" "}
@@ -281,7 +315,12 @@ export default function LocationPage({ post }) {
                 </div>
 
                 <div className="flex gap-2 items-start">
-                  <Image src="/process.svg" width={20} height={20}></Image>
+                  <Image
+                    src="/process.svg"
+                    width={20}
+                    height={20}
+                    alt="Professionalism"
+                  ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
                       4. Professionalism{" "}
@@ -298,7 +337,7 @@ export default function LocationPage({ post }) {
 
           {/* Companies */}
           <div className="py-5 px-8">
-            <h2 className="text-5xl leading-normal text-dark font-medium pt-4">
+            <h2 className="text-4xl leading-normal text-dark font-medium pt-4">
               {post.fields.heading_h2}
             </h2>
             {/* company 1 */}
