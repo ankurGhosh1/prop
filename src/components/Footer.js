@@ -8,11 +8,11 @@ const Footer = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h2 className="text-xl font-bold">My Blog</h2>
+            <p className="text-xl font-bold">My Blog</p>
             <p className="mt-2">Sharing interesting articles and insights.</p>
           </div>
           <div>
-            <h2 className="text-xl font-bold">Quick Links</h2>
+            <p className="text-xl font-bold">Quick Links</p>
             <ul className="mt-2 space-y-2">
               <li>
                 <Link

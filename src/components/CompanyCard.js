@@ -17,22 +17,20 @@ function CompanyCard(props) {
         />
         <Link
           href={`tel:${phone ? phone : null}`}
-          className="p-3 border border-orange w-[150px] text-center"
+          className="p-3 border border-orange w-[150px] text-center text-sm"
         >
           {phone ? phone : null}
         </Link>
         <Link
           href={`${url ? url : null}`}
-          className="p-3 bg-orange text-white w-[150px] text-center"
+          className="p-3 bg-orange text-white w-[150px] text-center text-sm"
           target="_blank"
         >
           Visit Website
         </Link>
       </div>
       <div>
-        <h1 className="text-3xl text-dark font-medium mb-2">
-          {name ? name : null}
-        </h1>
+        <h3 className="text-3xl text-dark mb-2">{name ? name : null}</h3>
         <address className="text-orange text-sm">
           {address ? address : null}
         </address>

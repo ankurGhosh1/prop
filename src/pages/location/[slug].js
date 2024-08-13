@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  // console.log(post.fields);
+  console.log(post.fields);
   return (
     <Layout>
       <NextSeo
@@ -104,7 +104,7 @@ export default function LocationPage({ post }) {
           {/* top picks */}
           <div className="flex items-center justify-center py-8 bg-medDark">
             <div className="bg-white p-5 w-3/4 rounded-xl max-md:w-full max-md:mx-5">
-              <p className="text-2xl font-bold">Our top picks</p>
+              <p className="text-2xl font-bold">Our Top Three Picks</p>
               <table className="min-w-full divide-y divide-gray-200">
                 <tbody className="bg-white divide-y divide-gray-200">
                   <tr>
@@ -205,7 +205,7 @@ export default function LocationPage({ post }) {
           {/* selection process */}
           <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange max-lg:grid-cols-1">
             <div>
-              <h3 className="text-5xl text-white pb-4 leading-normal">
+              <h3 className="text-3xl text-white pb-4 leading-normal">
                 Our Selection Criteria
               </h3>
               <p className="text-white">
@@ -222,7 +222,9 @@ export default function LocationPage({ post }) {
                 <div className="flex gap-2 items-center">
                   <Image src="/process.svg" width={50} height={80}></Image>
                   <div>
-                    <p className="font-bold text-lg">89</p>
+                    <p className="font-bold text-lg">
+                      {post.fields.companies_reviewed}
+                    </p>
                     <p className="text-sm">Companies Reviewed</p>
                   </div>
                 </div>
@@ -295,8 +297,8 @@ export default function LocationPage({ post }) {
           </div>
 
           {/* Companies */}
-          <div className="py-3 px-8">
-            <h2 className="text-3xl leading-normal text-dark font-medium pt-4">
+          <div className="py-5 px-8">
+            <h2 className="text-5xl leading-normal text-dark font-medium pt-4">
               {post.fields.heading_h2}
             </h2>
             {/* company 1 */}
