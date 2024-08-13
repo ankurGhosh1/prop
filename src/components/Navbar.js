@@ -3,36 +3,36 @@ import { useState } from "react";
 import Link from "next/link";
 import Container from "./Container";
 import { IoMenu } from "react-icons/io5";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-dark shadow-lg py-8">
+    <nav className="shadow-lg py-5">
       <Container>
         <div className="max-lg:flex max-lg:justify-between">
-          <div className="flex justify-between w-full">
-            <div className="flex items-center justify-between w-full">
-              <Link href="/" className="text-xl font-medium text-gray">
-                Driving Classes
-              </Link>
-            </div>
+          <div className="flex items-center justify-between w-full">
+            <Link href="/" className="flex justify-center items-center">
+              <Image src="/logo.jpg" height={80} width={140} />
+            </Link>
+
             <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
               <Link
                 href="/"
-                className="text-white inline-flex items-center px-1 pt-1 text-md font-medium opacity-80 hover:opacity-100 transition duration-300"
+                className="text-dark inline-flex items-center px-1 pt-1 text-lg font-medium"
               >
                 Home
               </Link>
               <Link
                 href="/location"
-                className="text-white inline-flex items-center px-1 pt-1 text-md font-medium opacity-80 hover:opacity-100 transition duration-300"
+                className="text-dark inline-flex items-center px-1 pt-1 text-lg font-medium"
               >
                 Location
               </Link>
               <Link
                 href="/contact"
-                className="text-white inline-flex items-center px-1 pt-1 text-md font-medium opacity-80 hover:opacity-100 transition duration-300"
+                className="text-dark inline-flex items-center px-1 pt-1 text-lg font-medium"
               >
                 Contact
               </Link>
