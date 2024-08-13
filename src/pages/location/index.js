@@ -39,14 +39,16 @@ const Location = ({ posts }) => {
         ]}
       />
       <Container>
-        <h1 className="text-5xl pb-12">All Location</h1>
-        <div className="grid grid-cols-3">
-          {posts.map((post) => (
-            <Link href={`/location/${post.fields.slug}`} key={post.id}>
-              <h2 className="text-2xl pb-3">{post.fields.name}</h2>
-              <p>{post.fields.description}</p>
-            </Link>
-          ))}
+        <div className="py-16">
+          <h1 className="text-5xl pb-12">All Location</h1>
+          <div className="grid grid-cols-3 py-8">
+            {posts.map((post) => (
+              <Link href={`/location/${post.fields.slug}`} key={post.id}>
+                <h2 className="text-2xl pb-3">{post.fields.name}</h2>
+                <p>{post.fields.description}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
     </Layout>

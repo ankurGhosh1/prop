@@ -41,7 +41,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="text-xl font-bold">Follow Us</h2>
+            <p className="text-xl font-bold">Follow Us</p>
             <ul className="mt-2 space-y-2">
               <li>
                 <a

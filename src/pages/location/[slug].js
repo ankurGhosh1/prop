@@ -94,8 +94,8 @@ export default function LocationPage({ post }) {
                 </p>
               </div>
               <Image
-                // src={post.fields.banner_image[0].url}
-                src="/badge.png"
+                src={post.fields.banner_image[0].url}
+                // src="/badge.png"
                 width={match ? 350 : 320}
                 height={match ? 350 : 320}
               />
@@ -231,7 +231,7 @@ export default function LocationPage({ post }) {
                 <div className="flex gap-2 items-center">
                   <Image src="/process-1.svg" width={50} height={80}></Image>
                   <div>
-                    <p className="font-bold text-lg">40</p>
+                    <p className="font-bold text-lg">10</p>
                     <p className="text-sm">Companies Curated</p>
                   </div>
                 </div>
