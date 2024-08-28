@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  // console.log(post.fields);
+  console.log(post.fields["company_logo (from Company_1)"][0].url);
   return (
     <Layout>
       <NextSeo
@@ -112,8 +112,9 @@ export default function LocationPage({ post }) {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <Image
                         src={
-                          post.fields[`logo (from Company 1)`]
-                            ? post.fields[`logo (from Company 1)`][0]
+                          post.fields["company_logo (from Company_1)"]
+                            ? post.fields["company_logo (from Company_1)"][0]
+                                .url
                             : ""
                         }
                         width={60}
@@ -143,8 +144,9 @@ export default function LocationPage({ post }) {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <Image
                         src={
-                          post.fields[`logo (from Company 2)`]
-                            ? post.fields[`logo (from Company 2)`][0]
+                          post.fields["company_logo (from Company_2)"]
+                            ? post.fields["company_logo (from Company_2)"][0]
+                                .url
                             : ""
                         }
                         width={60}
@@ -174,8 +176,9 @@ export default function LocationPage({ post }) {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <Image
                         src={
-                          post.fields[`logo (from Company 3)`]
-                            ? post.fields[`logo (from Company 3)`][0]
+                          post.fields["company_logo (from Company_1)"]
+                            ? post.fields["company_logo (from Company_1)"][0]
+                                .url
                             : ""
                         }
                         width={60}
@@ -343,7 +346,7 @@ export default function LocationPage({ post }) {
             {/* company 1 */}
             {post.fields.Company_1 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 1)`][0]}
+                image={post.fields["company_logo (from Company_1)"][0].url}
                 phone={post.fields[`number (from Company 1)`][0]}
                 url={post.fields[`website_url (from Company 1)`][0]}
                 name={post.fields["company_name (from Company 1)"][0]}
@@ -357,7 +360,7 @@ export default function LocationPage({ post }) {
             {/* company 2 */}
             {post.fields.Company_2 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 2)`][0]}
+                image={post.fields["company_logo (from Company_2)"][0].url}
                 phone={post.fields[`number (from Company 2)`][0]}
                 url={post.fields[`website_url (from Company 2)`][0]}
                 name={post.fields["company_name (from Company 2)"][0]}
@@ -371,7 +374,7 @@ export default function LocationPage({ post }) {
             {/* company 3 */}
             {post.fields.Company_3 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 3)`][0]}
+                image={post.fields["company_logo (from Company_3)"][0].url}
                 phone={post.fields[`number (from Company 3)`][0]}
                 url={post.fields[`website_url (from Company 3)`][0]}
                 name={post.fields["company_name (from Company 3)"][0]}
@@ -385,7 +388,7 @@ export default function LocationPage({ post }) {
             {/* company 4 */}
             {post.fields.Company_4 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 4)`][0]}
+                image={post.fields["company_logo (from Company_4)"][0].url}
                 phone={post.fields[`number (from Company 4)`][0]}
                 url={post.fields[`website_url (from Company 4)`][0]}
                 name={post.fields["company_name (from Company 4)"][0]}
@@ -399,7 +402,7 @@ export default function LocationPage({ post }) {
             {/* company 5 */}
             {post.fields.Company_5 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 5)`][0]}
+                image={post.fields["company_logo (from Company_5)"][0].url}
                 phone={post.fields[`number (from Company 5)`][0]}
                 url={post.fields[`website_url (from Company 5)`][0]}
                 name={post.fields["company_name (from Company 5)"][0]}
@@ -413,7 +416,7 @@ export default function LocationPage({ post }) {
             {/* company 6 */}
             {post.fields.Company_6 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 6)`][0]}
+                image={post.fields["company_logo (from Company_6)"][0].url}
                 phone={post.fields[`number (from Company 6)`][0]}
                 url={post.fields[`website_url (from Company 6)`][0]}
                 name={post.fields["company_name (from Company 6)"][0]}
@@ -427,7 +430,7 @@ export default function LocationPage({ post }) {
             {/* company 7 */}
             {post.fields.Company_7 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 7)`][0]}
+                image={post.fields["company_logo (from Company_7)"][0].url}
                 phone={post.fields[`number (from Company 7)`][0]}
                 url={post.fields[`website_url (from Company 7)`][0]}
                 name={post.fields["company_name (from Company 7)"][0]}
@@ -441,7 +444,7 @@ export default function LocationPage({ post }) {
             {/* company 8 */}
             {post.fields.Company_8 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 8)`][0]}
+                image={post.fields["company_logo (from Company_8)"][0].url}
                 phone={post.fields[`number (from Company 8)`][0]}
                 url={post.fields[`website_url (from Company 8)`][0]}
                 name={post.fields["company_name (from Company 8)"][0]}
@@ -455,7 +458,7 @@ export default function LocationPage({ post }) {
             {/* company 9 */}
             {post.fields.Company_9 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 9)`][0]}
+                image={post.fields["company_logo (from Company_9)"][0].url}
                 phone={post.fields[`number (from Company 9)`][0]}
                 url={post.fields[`website_url (from Company 9)`][0]}
                 name={post.fields["company_name (from Company 9)"][0]}
@@ -469,7 +472,7 @@ export default function LocationPage({ post }) {
             {/* company 10 */}
             {post.fields.Company_10 ? (
               <CompanyCard
-                image={post.fields[`logo (from Company 10)`][0]}
+                image={post.fields["company_logo (from Company_10)"][0].url}
                 phone={post.fields[`number (from Company 10)`][0]}
                 url={post.fields[`website_url (from Company 10)`][0]}
                 name={post.fields["company_name (from Company 10)"][0]}
