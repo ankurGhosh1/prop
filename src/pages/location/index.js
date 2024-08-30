@@ -49,7 +49,7 @@ const Location = () => {
             </h1>
             <Link
               href="#allLocation"
-              className="bg-neutral py-3 px-5 rounded-md text-white text-lg"
+              className="bg-orange py-3 px-5 rounded-md text-white text-lg"
             >
               Check all locations{" "}
             </Link>
