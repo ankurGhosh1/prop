@@ -13,7 +13,7 @@ function CompanyCard(props) {
           width={120}
           height={120}
           className="border border-dark rounded-full"
-          alt="logo"
+          alt={name}
         />
         <Link
           href={`tel:${phone ? phone : null}`}

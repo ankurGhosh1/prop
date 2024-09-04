@@ -38,7 +38,7 @@ export default function LocationPage({ post }) {
         title={post.fields.meta_title}
         description={post.fields.meta_description}
         openGraph={{
-          url: `https://www.myblog.com/location/${post.fields.slug}`,
+          url: `https://www.mydrivingschools.com/location/${post.fields.slug}`,
           title: post.fields.meta_title,
           description: post.fields.meta_description,
           images: [
@@ -59,20 +59,20 @@ export default function LocationPage({ post }) {
         additionalLinkTags={[
           {
             rel: "canonical",
-            href: `https://www.myblog.com/location/${post.fields.slug}`,
+            href: `https://www.mydrivingschools.com/location/${post.fields.slug}`,
           },
         ]}
       />
 
       <ArticleJsonLd
-        url={`https://www.myblog.com/location/${post.fields.slug}`}
+        url={`https://www.mydrivingschools.com/location/${post.fields.slug}`}
         title={post.fields.meta_title}
         images={[post.fields.banner_image]}
         datePublished={post.fields.publish_date}
         dateModified={post.fields.modified_date || post.fields.publish_date}
         authorName="Author Name"
         publisherName="My Blog"
-        publisherLogo="https://www.myblog.com/logo.jpg"
+        publisherLogo="https://www.mydrivingschools.com/logo.jpg"
         description={post.fields.meta_description}
       />
       <Container>
@@ -98,7 +98,7 @@ export default function LocationPage({ post }) {
                 // src="/badge.png"
                 width={match ? 350 : 320}
                 height={match ? 350 : 320}
-                alt={`Badge for ${post.fields.name}`}
+                alt={`Badge of best driving schools in ${post.fields.name}`}
               />
             </div>
           </div>
@@ -176,8 +176,8 @@ export default function LocationPage({ post }) {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <Image
                         src={
-                          post.fields["company_logo (from Company_1)"]
-                            ? post.fields["company_logo (from Company_1)"][0]
+                          post.fields["company_logo (from Company_3)"]
+                            ? post.fields["company_logo (from Company_3)"][0]
                                 .url
                             : ""
                         }
@@ -212,9 +212,9 @@ export default function LocationPage({ post }) {
           {/* selection process */}
           <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange max-lg:grid-cols-1">
             <div>
-              <h3 className="text-3xl text-white pb-4 leading-normal">
+              <h2 className="text-3xl text-white pb-4 leading-normal">
                 Our Selection Criteria
-              </h3>
+              </h2>
               <p className="text-white">
                 Our goal is to connect property owners with the best property
                 management company to ensure your investments continue to

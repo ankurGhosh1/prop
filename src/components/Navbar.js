@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="max-lg:flex max-lg:justify-between">
           <div className="flex items-center justify-between w-full">
             <Link href="/" className="flex justify-center items-center">
-              <Image src="/logo.jpg" height={80} width={140} alt="logo" />
+              <Image src="/logo.jpg" height={120} width={140} alt="logo" />
             </Link>
 
             <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">

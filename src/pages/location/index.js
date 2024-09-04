@@ -15,12 +15,12 @@ const Location = () => {
         title="Blog - My Blog"
         description="Read the latest posts on My Blog."
         openGraph={{
-          url: "https://www.myblog.com/blog",
+          url: "https://www.mydrivingschools.com/blog",
           title: "Blog - My Blog",
           description: "Read the latest posts on My Blog.",
           images: [
             {
-              url: "https://www.myblog.com/blog-image.jpg",
+              url: "https://www.mydrivingschools.com/blog-image.jpg",
               width: 800,
               height: 600,
               alt: "Blog Image",
@@ -36,7 +36,7 @@ const Location = () => {
         additionalLinkTags={[
           {
             rel: "canonical",
-            href: "https://www.myblog.com/blog",
+            href: "https://www.mydrivingschools.com/blog",
           },
         ]}
       />

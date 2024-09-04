@@ -47,13 +47,13 @@ function Contact() {
         title="Contact page"
         description="Discover the latest articles and insights on various topics."
         openGraph={{
-          url: "https://www.myblog.com/",
+          url: "https://www.mydrivingschools.com/",
           title: "Contact page",
           description:
             "Discover the latest articles and insights on various topics.",
           images: [
             {
-              url: "https://www.myblog.com/home-image.jpg",
+              url: "https://www.mydrivingschools.com/logo.jpg",
               width: 800,
               height: 600,
               alt: "Home Image",

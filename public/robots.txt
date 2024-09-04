@@ -1,9 +1,9 @@
 # *
 User-agent: *
-Allow: /
+Disallow: /
 
 # Host
-Host: localhost:3000
+Host: https://www.mydrivingschools.com/
 
 # Sitemaps
-Sitemap: localhost:3000/sitemap.xml
+Sitemap: https://www.mydrivingschools.com/sitemap.xml
