@@ -6,15 +6,21 @@ import { NextSeo } from "next-seo";
 
 const GA_TRACKING_ID = "G-7Z44WV13KY";
 
+const trackPageView = (url) => {
+  window.gtag("config", GA_TRACKING_ID, {
+    page_path: url,
+  });
+};
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag("config", GA_TRACKING_ID, {
-        page_path: url,
-      });
+      trackPageView(url);
     };
+
+    // Listen for route changes and trigger a page view
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
@@ -23,7 +29,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {/* Google Analytics */}
+      {/* Google Analytics script */}
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
