@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "https://mydrivingschools.com(.*)",
-      "destination": "https://www.mydrivingschools.com$1",
-      "permanent": true
-    }
-  ]
-}
