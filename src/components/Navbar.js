@@ -9,9 +9,9 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="shadow-lg py-5">
+    <nav className="shadow-lg h-[80px] my-auto flex items-center">
       <Container>
-        <div className="max-lg:flex max-lg:justify-between">
+        <div className="max-lg:flex max-lg:justify-between ">
           <div className="flex items-center justify-between w-full">
             <Link href="/" className="flex justify-center items-center">
               <Image src="/logo.jpg" height={120} width={140} alt="logo" />
