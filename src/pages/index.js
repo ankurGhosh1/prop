@@ -7,13 +7,14 @@ export default function Home() {
   return (
     <>
       <NextSeo
-        title="Welcome to My Blog"
-        description="Discover the latest articles and insights on various topics."
+        title="MyDrivingSchools.com - Find the Best Driving Schools Near You "
+        description="Discover top-rated driving schools near your location with MyDrivingSchools.com. Compare driving lessons, instructor qualifications, and pricing to find the perfect school."
         openGraph={{
           url: "https://www.mydrivingschools.com/",
-          title: "Welcome to My Blog",
+          title:
+            "MyDrivingSchools.com - Find the Best Driving Schools Near You ",
           description:
-            "Discover the latest articles and insights on various topics.",
+            "Discover top-rated driving schools near your location with MyDrivingSchools.com. Compare driving lessons, instructor qualifications, and pricing to find the perfect school.",
           images: [
             {
               url: "https://www.mydrivingschools.com/logo.jpg",

@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  console.log(post.fields["company_logo (from Company_1)"][0].url);
+  console.log(post.fields);
   return (
     <Layout>
       <NextSeo
@@ -216,11 +216,7 @@ export default function LocationPage({ post }) {
                 Our Selection Criteria
               </h2>
               <p className="text-white">
-                Our goal is to connect property owners with the best property
-                management company to ensure your investments continue to
-                flourish. We scored property management companies on over 30
-                different variables to provide you a hand-picked list of the
-                best property management companies in the Auburn area.
+                {post.fields.our_selection ? post.fields.our_selection : ""}
               </p>
             </div>
 
@@ -275,10 +271,11 @@ export default function LocationPage({ post }) {
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
-                      1. Reputation{" "}
+                      1. Instructor Qualifications{" "}
                     </p>
                     <p className="text-sm text-medDark">
-                      An extensive track record of reliable, honest service.
+                      Certified, experienced instructors who provide
+                      personalised training
                     </p>
                   </div>
                 </div>
@@ -292,10 +289,11 @@ export default function LocationPage({ post }) {
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
-                      2. Credibility{" "}
+                      2. Curriculum{" "}
                     </p>
                     <p className="text-sm text-medDark">
-                      Understands property laws and industry best practices.
+                      Offer a variety of courses, from basic driver education
+                      and road test preparation
                     </p>
                   </div>
                 </div>
@@ -309,10 +307,11 @@ export default function LocationPage({ post }) {
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
-                      3. Experience{" "}
+                      3. Reviews{" "}
                     </p>
                     <p className="text-sm text-medDark">
-                      Knowledge of your property to save you time and money.
+                      High success rates in licensing exams and positive
+                      feedback from past students
                     </p>
                   </div>
                 </div>
@@ -326,11 +325,11 @@ export default function LocationPage({ post }) {
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
-                      4. Professionalism{" "}
+                      4. Affordability{" "}
                     </p>
                     <p className="text-sm text-medDark">
-                      Provides transparent, fair pricing and great
-                      communication.
+                      Offer package deals, payment plans, and flexible class
+                      schedules.
                     </p>
                   </div>
                 </div>

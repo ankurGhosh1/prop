@@ -44,13 +44,12 @@ function Contact() {
   return (
     <>
       <NextSeo
-        title="Contact page"
-        description="Discover the latest articles and insights on various topics."
+        title="Contact - MyDrivingSchools.com"
+        description=""
         openGraph={{
-          url: "https://www.mydrivingschools.com/",
-          title: "Contact page",
-          description:
-            "Discover the latest articles and insights on various topics.",
+          url: "https://www.mydrivingschools.com/contact",
+          title: "Contact - MyDrivingSchools.com",
+          description: "",
           images: [
             {
               url: "https://www.mydrivingschools.com/logo.jpg",
@@ -60,6 +59,12 @@ function Contact() {
             },
           ],
         }}
+        additionalLinkTags={[
+          {
+            rel: "canonical",
+            href: "https://www.mydrivingschools.com/contact",
+          },
+        ]}
       />
       <Layout>
         <Container className="flex flex-col items-center justify-center">

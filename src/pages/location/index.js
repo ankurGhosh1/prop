@@ -12,15 +12,15 @@ const Location = () => {
   return (
     <Layout>
       <NextSeo
-        title="Blog - My Blog"
-        description="Read the latest posts on My Blog."
+        title="Location - MyDrivingSchools.com"
+        description=""
         openGraph={{
-          url: "https://www.mydrivingschools.com/blog",
-          title: "Blog - My Blog",
-          description: "Read the latest posts on My Blog.",
+          url: "https://www.mydrivingschools.com/location",
+          title: "Location - MyDrivingSchools.com",
+          description: "",
           images: [
             {
-              url: "https://www.mydrivingschools.com/blog-image.jpg",
+              url: "https://www.mydrivingschools.com/logo.jpg",
               width: 800,
               height: 600,
               alt: "Blog Image",
@@ -36,7 +36,7 @@ const Location = () => {
         additionalLinkTags={[
           {
             rel: "canonical",
-            href: "https://www.mydrivingschools.com/blog",
+            href: "https://www.mydrivingschools.com/location",
           },
         ]}
       />
@@ -44,8 +44,8 @@ const Location = () => {
         <Container>
           <div className="flex flex-col items-center justify-center gap-16">
             <h1 className="text-5xl font-medium text-white text-center leading-normal max-sm:text-3xl max-sm:leading-snug max-sm:font-bold">
-              Start your penetration testing in minutes, <br />
-              from anywhere in the world🌎
+              Find the Best Driving Schools <br />
+              in Major U.S. Cities
             </h1>
             <Link
               href="#allLocation"
