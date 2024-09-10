@@ -12,7 +12,6 @@ import CompanyCard from "@/components/CompanyCard";
 import RatingStars from "@/components/Star";
 
 export async function getServerSideProps(context) {
-  const match = useMediaMatch("576px");
   const { slug } = context.params;
   const post = await fetchPostBySlug(slug);
 
@@ -31,6 +30,7 @@ export async function getServerSideProps(context) {
 
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
+  const matchSm = useMediaMatch("576px");
 
   // console.log(post.fields);
   return (
@@ -162,8 +162,8 @@ export default function LocationPage({ post }) {
                           ? post.fields["company_logo (from Company_1)"][0].url
                           : ""
                       }
-                      width={match ? 60 : 100}
-                      height={match ? 60 : 100}
+                      width={matchSm ? 60 : 100}
+                      height={matchSm ? 60 : 100}
                       alt={post.fields[`company_name (from Company 1)`]}
                     />
                     <p className="text-xl max-sm:text-base">
@@ -179,8 +179,8 @@ export default function LocationPage({ post }) {
                           ? post.fields["company_logo (from Company_2)"][0].url
                           : ""
                       }
-                      width={match ? 60 : 100}
-                      height={match ? 60 : 100}
+                      width={matchSm ? 60 : 100}
+                      height={matchSm ? 60 : 100}
                       alt={post.fields[`company_name (from Company 2)`]}
                     />
                     <p className="text-xl max-sm:text-base">
@@ -196,8 +196,8 @@ export default function LocationPage({ post }) {
                           ? post.fields["company_logo (from Company_3)"][0].url
                           : ""
                       }
-                      width={match ? 60 : 100}
-                      height={match ? 60 : 100}
+                      width={matchSm ? 60 : 100}
+                      height={matchSm ? 60 : 100}
                       alt={post.fields[`company_name (from Company 3)`]}
                     />
                     <p className="text-xl max-sm:text-base">
