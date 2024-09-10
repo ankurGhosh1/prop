@@ -12,6 +12,7 @@ import CompanyCard from "@/components/CompanyCard";
 import RatingStars from "@/components/Star";
 
 export async function getServerSideProps(context) {
+  const match = useMediaMatch("576px");
   const { slug } = context.params;
   const post = await fetchPostBySlug(slug);
 
@@ -31,7 +32,7 @@ export async function getServerSideProps(context) {
 export default function LocationPage({ post }) {
   const match = useMediaMatch("768px");
 
-  console.log(post.fields);
+  // console.log(post.fields);
   return (
     <Layout>
       <NextSeo
@@ -64,17 +65,63 @@ export default function LocationPage({ post }) {
         ]}
       />
 
-      <ArticleJsonLd
-        url={`https://www.mydrivingschools.com/location/${post.fields.slug}`}
-        title={post.fields.meta_title}
-        images={[post.fields.banner_image]}
-        datePublished={post.fields.publish_date}
-        dateModified={post.fields.modified_date || post.fields.publish_date}
-        authorName="Author Name"
-        publisherName="My Blog"
-        publisherLogo="https://www.mydrivingschools.com/logo.jpg"
-        description={post.fields.meta_description}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Mydrivingschools.com",
+                item: "https://www.mydrivingschools.com/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Location",
+                item: "https://www.mydrivingschools.com/location",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: `${post.fields.meta_title}`,
+                item: `https://www.mydrivingschools.com/location/${post.fields.slug}`,
+              },
+            ],
+          }),
+        }}
       />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "WebPage",
+            "@id": "#WebPage",
+            url: `https://www.mydrivingschools.com/location/${post.fields.slug}`,
+            name: `${post.fields.meta_title}`,
+            datePublished: `${post.fields.created_time}`,
+            dateModified: `${post.fields.modified_date}`,
+          }),
+        }}
+      />
+
+      {/* Adding Stars Template 
+        <td>
+          <RatingStars
+            rating={
+              post.fields[`rating (from Company 1)`]
+                ? post.fields[`rating (from Company 1)`]
+                : null
+            }
+            maxRating={5}
+          />
+        </td> */}
+
       <Container>
         <div className="rounded-xl bg-gray my-16">
           {/* breadcrumbs */}
@@ -106,111 +153,108 @@ export default function LocationPage({ post }) {
           <div className="flex items-center justify-center py-8 bg-medDark">
             <div className="bg-white p-5 w-3/4 rounded-xl max-md:w-full max-md:mx-5">
               <p className="text-2xl font-bold">Our Top Three Picks</p>
-              <table className="min-w-full divide-y divide-gray-200">
-                <tbody className="bg-white divide-y divide-gray-200">
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              <div className="grid grid-cols-[1fr_.5fr] gap-8 px-6 py-4 max-md:grid-cols-[1fr] max-sm:px-0">
+                <div className="flex flex-col justify-center gap-4">
+                  <div className="flex gap-8 items-center">
+                    <Image
+                      src={
+                        post.fields["company_logo (from Company_1)"]
+                          ? post.fields["company_logo (from Company_1)"][0].url
+                          : ""
+                      }
+                      width={match ? 60 : 100}
+                      height={match ? 60 : 100}
+                      alt={post.fields[`company_name (from Company 1)`]}
+                    />
+                    <p className="text-xl max-sm:text-base">
+                      {post.fields[`company_name (from Company 1)`]
+                        ? post.fields[`company_name (from Company 1)`]
+                        : null}
+                    </p>
+                  </div>
+                  <div className="flex gap-8 items-center">
+                    <Image
+                      src={
+                        post.fields["company_logo (from Company_2)"]
+                          ? post.fields["company_logo (from Company_2)"][0].url
+                          : ""
+                      }
+                      width={match ? 60 : 100}
+                      height={match ? 60 : 100}
+                      alt={post.fields[`company_name (from Company 2)`]}
+                    />
+                    <p className="text-xl max-sm:text-base">
+                      {post.fields[`company_name (from Company 2)`]
+                        ? post.fields[`company_name (from Company 2)`]
+                        : null}
+                    </p>
+                  </div>
+                  <div className="flex gap-8 items-center">
+                    <Image
+                      src={
+                        post.fields["company_logo (from Company_3)"]
+                          ? post.fields["company_logo (from Company_3)"][0].url
+                          : ""
+                      }
+                      width={match ? 60 : 100}
+                      height={match ? 60 : 100}
+                      alt={post.fields[`company_name (from Company 3)`]}
+                    />
+                    <p className="text-xl max-sm:text-base">
+                      {post.fields[`company_name (from Company 3)`]
+                        ? post.fields[`company_name (from Company 3)`]
+                        : null}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col justify-center max-md:hidden">
+                  <div className="flex flex-col gap-4 max-sm:m-auto">
+                    <div className="flex gap-4 items-center">
                       <Image
-                        src={
-                          post.fields["company_logo (from Company_1)"]
-                            ? post.fields["company_logo (from Company_1)"][0]
-                                .url
-                            : ""
-                        }
-                        width={60}
-                        height={60}
-                        alt={post.fields[`company_name (from Company 1)`]}
-                      />
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      <p className="text-xl">
-                        {post.fields[`company_name (from Company 1)`]
-                          ? post.fields[`company_name (from Company 1)`]
-                          : null}
-                      </p>
-                    </td>
-                    <td>
-                      <RatingStars
-                        rating={
-                          post.fields[`rating (from Company 1)`]
-                            ? post.fields[`rating (from Company 1)`]
-                            : null
-                        }
-                        maxRating={5}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        src="/process.svg"
+                        width={50}
+                        height={80}
+                        alt="process-1"
+                      ></Image>
+                      <div>
+                        <p className="font-bold text-lg">
+                          {post.fields.companies_reviewed}
+                        </p>
+                        <p className="text-sm">Companies Reviewed</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-center">
                       <Image
-                        src={
-                          post.fields["company_logo (from Company_2)"]
-                            ? post.fields["company_logo (from Company_2)"][0]
-                                .url
-                            : ""
-                        }
-                        width={60}
-                        height={60}
-                        alt={post.fields[`company_name (from Company 2)`]}
-                      />
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      <p className="text-xl">
-                        {post.fields[`company_name (from Company 2)`]
-                          ? post.fields[`company_name (from Company 2)`]
-                          : null}
-                      </p>
-                    </td>
-                    <td>
-                      <RatingStars
-                        rating={
-                          post.fields[`rating (from Company 2)`]
-                            ? post.fields[`rating (from Company 2)`]
-                            : null
-                        }
-                        maxRating={5}
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        src="/process-1.svg"
+                        width={50}
+                        height={80}
+                        alt="process-2"
+                      ></Image>
+                      <div>
+                        <p className="font-bold text-lg">10</p>
+                        <p className="text-sm">Companies Curated</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4 items-center">
                       <Image
-                        src={
-                          post.fields["company_logo (from Company_3)"]
-                            ? post.fields["company_logo (from Company_3)"][0]
-                                .url
-                            : ""
-                        }
-                        width={60}
-                        height={60}
-                        alt={post.fields[`company_name (from Company 3)`]}
-                      />
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      <p className="text-xl">
-                        {post.fields[`company_name (from Company 3)`]
-                          ? post.fields[`company_name (from Company 3)`]
-                          : null}
-                      </p>
-                    </td>
-                    <td>
-                      <RatingStars
-                        rating={
-                          post.fields[`rating (from Company 3)`]
-                            ? post.fields[`rating (from Company 3)`]
-                            : null
-                        }
-                        maxRating={5}
-                      />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                        src="/process-2.svg"
+                        width={50}
+                        height={80}
+                        alt="process-3"
+                      ></Image>
+                      <div>
+                        <p className="font-bold text-lg">3</p>
+                        <p className="text-sm">Top Picks</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* selection process */}
-          <div className="grid grid-cols-[.75fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange max-lg:grid-cols-1">
+          <div className="grid grid-cols-[1fr_1fr] gap-6 bg-medDark p-8 divide-x divide-orange max-lg:grid-cols-1">
             <div>
               <h2 className="text-3xl text-white pb-4 leading-normal">
                 Our Selection Criteria
@@ -220,8 +264,8 @@ export default function LocationPage({ post }) {
               </p>
             </div>
 
-            <div className="grid grid-cols-[.5fr_1fr] bg-gray rounded-xl p-8 divide-x gap-4 divide-orange max-sm:grid-cols-1 max-sm:divide-x-0 ">
-              <div className="flex flex-col gap-4 max-sm:m-auto">
+            <div className="bg-gray rounded-xl p-8">
+              {/* <div className="flex flex-col gap-4 max-sm:m-auto">
                 <div className="flex gap-2 items-center">
                   <Image
                     src="/process.svg"
@@ -260,7 +304,7 @@ export default function LocationPage({ post }) {
                     <p className="text-sm">Top Picks</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="flex flex-col gap-4 px-5">
                 <div className="flex gap-2 items-start">
                   <Image

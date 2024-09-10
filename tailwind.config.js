@@ -27,6 +27,7 @@ module.exports = {
         "max-md": { max: "768px" },
         "max-sm": { max: "576px" },
         "3xl": { min: "1690px" },
+        "min-md": { min: "768px" },
       },
     },
   },
