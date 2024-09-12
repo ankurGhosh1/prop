@@ -110,6 +110,111 @@ export default function LocationPage({ post }) {
         }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            itemListOrder: "https://schema.org/ItemListOrderDescending",
+            name: `${post.fields.meta_title}`,
+            url: `https://www.mydrivingschools.com/location/${post.fields.slug}`,
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 1)`]}`,
+                  image: `${post.fields["company_logo (from Company_1)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 2)`]}`,
+                  image: `${post.fields["company_logo (from Company_2)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 3)`]}`,
+                  image: `${post.fields["company_logo (from Company_3)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 4)`]}`,
+                  image: `${post.fields["company_logo (from Company_4)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 5)`]}`,
+                  image: `${post.fields["company_logo (from Company_5)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 6,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 6)`]}`,
+                  image: `${post.fields["company_logo (from Company_6)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 7,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 7)`]}`,
+                  image: `${post.fields["company_logo (from Company_7)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 8,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 8)`]}`,
+                  image: `${post.fields["company_logo (from Company_8)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 9,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 9)`]}`,
+                  image: `${post.fields["company_logo (from Company_9)"][0].url}`,
+                },
+              },
+              {
+                "@type": "ListItem",
+                position: 10,
+                item: {
+                  "@type": "Organization",
+                  name: `${post.fields[`company_name (from Company 10)`]}`,
+                  image: `${post.fields["company_logo (from Company_10)"][0].url}`,
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       {/* Adding Stars Template 
         <td>
           <RatingStars
@@ -123,7 +228,7 @@ export default function LocationPage({ post }) {
         </td> */}
 
       <Container>
-        <div className="rounded-xl bg-gray my-16">
+        <div className="rounded-xl bg-gray my-36">
           {/* breadcrumbs */}
           <div className="bg-dark flex gap-2 py-3 px-8 rounded-tl-xl rounded-tr-xl text-gray items-center">
             <p>Home</p>

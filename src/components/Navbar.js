@@ -1,78 +1,84 @@
-// src/components/Navbar.js
 import { useState } from "react";
 import Link from "next/link";
-import Container from "./Container";
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5"; // Import close icon
 import Image from "next/image";
+import Container from "./Container";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
-    <nav className="shadow-lg h-[80px] my-auto flex items-center">
+    <nav className="bg-white shadow-lg fixed w-full z-10 top-0">
       <Container>
-        <div className="max-lg:flex max-lg:justify-between ">
-          <div className="flex items-center justify-between w-full">
-            <Link href="/" className="flex justify-center items-center">
-              <Image src="/logo.jpg" height={120} width={140} alt="logo" />
-            </Link>
+        <div className=" mx-auto px-4 flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image src="/logo.jpg" height={120} width={140} alt="logo" />
+          </Link>
 
-            <div className="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-              <Link
-                href="/"
-                className="text-dark inline-flex items-center px-1 pt-1 text-lg font-medium"
-              >
-                Home
-              </Link>
-              <Link
-                href="/location"
-                className="text-dark inline-flex items-center px-1 pt-1 text-lg font-medium"
-              >
-                Location
-              </Link>
-              <Link
-                href="/contact"
-                className="text-dark inline-flex items-center px-1 pt-1 text-lg font-medium"
-              >
-                Contact
-              </Link>
-            </div>
-          </div>
-          <div className="flex items-center sm:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-gray hover:bg-gray-900 focus:outline-none focus:bg-gray-900 focus:text-gray"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <IoMenu className="text-gray" size={24} />
-            </button>
-          </div>
-        </div>
-
-        <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
-          <div className="pt-2 pb-3 space-y-1">
+          {/* Desktop Links */}
+          <div className="hidden sm:flex space-x-8">
             <Link
               href="/"
-              className="text-gray block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium hover:bg-gray-50"
+              className="text-gray-900 hover:text-blue-600 font-medium"
             >
               Home
             </Link>
             <Link
               href="/location"
-              className="text-gray block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium hover:bg-gray-50"
+              className="text-gray-900 hover:text-blue-600 font-medium"
             >
               Location
             </Link>
             <Link
               href="/contact"
-              className="text-gray block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium hover:bg-gray-50"
+              className="text-gray-900 hover:text-blue-600 font-medium"
             >
               Contact
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="sm:hidden flex items-center">
+            <button
+              onClick={toggleMobileMenu}
+              className="text-gray-900 hover:text-blue-600 focus:outline-none"
+            >
+              {isMobileMenuOpen ? <IoClose size={30} /> : <IoMenu size={30} />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="sm:hidden bg-gray-100 shadow-lg py-5">
+            <Link
+              href="/"
+              className="block text-gray-900 hover:bg-gray-300 px-4 py-2 font-medium"
+              onClick={toggleMobileMenu}
+            >
+              Home
+            </Link>
+            <Link
+              href="/location"
+              className="block text-gray-900 hover:bg-gray-300 px-4 py-2 font-medium"
+              onClick={toggleMobileMenu}
+            >
+              Location
+            </Link>
+            <Link
+              href="/contact"
+              className="block text-gray-900 hover:bg-gray-300 px-4 py-2 font-medium"
+              onClick={toggleMobileMenu}
+            >
+              Contact
+            </Link>
+          </div>
+        )}
       </Container>
     </nav>
   );

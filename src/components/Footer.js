@@ -8,10 +8,6 @@ const Footer = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <p className="text-xl font-bold">My Blog</p>
-            <p className="mt-2">Sharing interesting articles and insights.</p>
-          </div>
-          <div>
             <p className="text-xl font-bold">Quick Links</p>
             <ul className="mt-2 space-y-2">
               <li>
@@ -41,6 +37,35 @@ const Footer = () => {
             </ul>
           </div>
           <div>
+            <p className="text-xl font-bold">Quick Links</p>
+            <ul className="mt-2 space-y-2">
+              <li>
+                <Link
+                  href="/location/new-york"
+                  className="opacity-80 hover:opacity-100 transition duration-300"
+                >
+                  New York
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/location/los-angeles"
+                  className="opacity-80 hover:opacity-100 transition duration-300"
+                >
+                  Los Angeles
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/location/chicago"
+                  className="opacity-80 hover:opacity-100 transition duration-300"
+                >
+                  Chicago
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
             <p className="text-xl font-bold">Follow Us</p>
             <ul className="mt-2 space-y-2">
               <li>
@@ -61,10 +86,10 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/my-driving-schools/"
                   className="opacity-80 hover:opacity-100 transition duration-300"
                 >
-                  Instagram
+                  LinkedIn
                 </a>
               </li>
             </ul>

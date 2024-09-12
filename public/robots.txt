@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /
 
 # Host
-Host: https://www.mydrivingschools.com/
+Host: https://www.mydrivingschools.com
 
 # Sitemaps
 Sitemap: https://www.mydrivingschools.com/sitemap.xml

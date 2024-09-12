@@ -9,10 +9,10 @@ const SEO = {
     site_name: "My Driving School",
     images: [
       {
-        url: "https://www.mydrivingschools.com/default-image.jpg",
+        url: "https://www.mydrivingschools.com/logo.jpg",
         width: 800,
         height: 600,
-        alt: "Default Image",
+        alt: "logo",
       },
     ],
   },

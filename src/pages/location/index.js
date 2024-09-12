@@ -58,7 +58,10 @@ const Location = () => {
       </div>
       <Container>
         <div className="py-16">
-          <div className="grid grid-cols-3 py-8 gap-16" id="allLocation">
+          <div
+            className="grid grid-cols-3 py-8 gap-16 max-md:grid-cols-2 max-sm:grid-cols-1"
+            id="allLocation"
+          >
             {/* {posts.map((post) => (
               <Link href={`/location/${post.fields.slug}`} key={post.id}>
                 <h2 className="text-2xl pb-3">{post.fields.name}</h2>
@@ -79,9 +82,9 @@ const Location = () => {
                 <Link href="/location/new-york" className="text-lg text-dark">
                   Driving school New York
                 </Link>
-                <Link href="/location/brooklyn" className="text-lg text-dark">
+                {/* <Link href="/location/brooklyn" className="text-lg text-dark">
                   Driving school Brooklyn
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -102,7 +105,7 @@ const Location = () => {
                 >
                   Driving school Los Angeles
                 </Link>
-                <Link
+                {/* <Link
                   href="/location/san-francisco"
                   className="text-lg text-dark"
                 >
@@ -110,7 +113,7 @@ const Location = () => {
                 </Link>
                 <Link href="/location/san-diego" className="text-lg text-dark">
                   Driving school San Diego
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -131,7 +134,7 @@ const Location = () => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <div className="flex gap-2">
                 <Image
                   src="/location.png"
@@ -345,7 +348,7 @@ const Location = () => {
                   Driving school Queens
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>
