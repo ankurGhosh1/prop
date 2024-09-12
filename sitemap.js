@@ -27,8 +27,7 @@ module.exports = {
     policies: [
       {
         userAgent: "*",
-        // allow: "/",
-        disallow: "/", // Uncomment and change to disallow specific paths
+        allow: "/",
       },
     ],
   },
