@@ -1,12 +1,12 @@
 // src/next-seo.config.js
 const SEO = {
-  title: "My Driving School",
-  description: "My Driving School",
+  title: "Best Driving School",
+  description: "Best Driving School",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.mydrivingschools.com/",
-    site_name: "My Driving School",
+    site_name: "Best Driving School",
     images: [
       {
         url: "https://www.mydrivingschools.com/logo.jpg",

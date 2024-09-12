@@ -8,18 +8,18 @@ export default function App({ Component, pageProps }) {
       <GoogleAnalytics />
       <NextSeo
         title="Best Driving School"
-        description="Best Driving Schools"
+        description=""
         openGraph={{
           type: "website",
           locale: "en_US",
-          url: "https://www.example.com",
-          site_name: "Default Site Name",
+          url: "https://www.mydrivingschools.com",
+          site_name: "My Driving School",
           images: [
             {
-              url: "https://www.example.com/default-image.jpg",
+              url: "https://www.mydrivingschools.com/logo.jpg",
               width: 800,
               height: 600,
-              alt: "Default Image",
+              alt: "Logo",
             },
           ],
         }}

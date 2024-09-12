@@ -23,16 +23,10 @@ const Location = () => {
               url: "https://www.mydrivingschools.com/logo.jpg",
               width: 800,
               height: 600,
-              alt: "Blog Image",
+              alt: "Logo",
             },
           ],
         }}
-        additionalMetaTags={[
-          {
-            property: "keywords",
-            content: "blog, articles, posts, my blog",
-          },
-        ]}
         additionalLinkTags={[
           {
             rel: "canonical",
