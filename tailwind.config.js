@@ -29,6 +29,7 @@ module.exports = {
         "3xl": { min: "1690px" },
         "min-md": { min: "768px" },
         "min-lg": { min: "1024px" },
+        "min-sm": { min: "576px" },
       },
     },
   },

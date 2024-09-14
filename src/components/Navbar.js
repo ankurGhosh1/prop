@@ -17,7 +17,13 @@ const Navbar = () => {
         <div className=" mx-auto px-4 flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image src="/logo.jpg" height={120} width={140} alt="logo" />
+            <Image
+              src="/logo.jpg"
+              height={120}
+              width={140}
+              alt="logo"
+              loading="eager"
+            />
           </Link>
 
           {/* Desktop Links */}

@@ -247,10 +247,10 @@ export default function LocationPage({ post }) {
               </div>
               <Image
                 src={post.fields.banner_image[0].url}
-                // src="/badge.png"
                 width={match ? 350 : 320}
                 height={match ? 350 : 320}
                 alt={`Badge of best driving schools in ${post.fields.name}`}
+                loading="eager"
               />
             </div>
           </div>
