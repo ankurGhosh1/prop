@@ -487,7 +487,7 @@ export default function LocationPage({ post }) {
           </div>
 
           {/* Companies */}
-          <div className="py-5 px-8">
+          <div className="py-5 px-8 max-sm:px-3">
             <h2 className="text-4xl leading-normal text-dark font-medium pt-4">
               {post.fields.heading_h2}
             </h2>

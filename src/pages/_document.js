@@ -8,6 +8,7 @@ export default function Document() {
           name="google-site-verification"
           content="lQ-OSWJyy-ntpkuKlEVMY4NL24CXGj-jmgBZ8-2zjSI"
         />
+        <link rel="icon" href="/fav.ico" />
       </Head>
       <body>
         <Main />
