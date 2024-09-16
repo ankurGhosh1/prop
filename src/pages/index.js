@@ -33,7 +33,7 @@ export default function Home() {
             <div className="flex justify-center py-4">
               <span className="flex items-center gap-4 bg-dark text-white font-bold px-6 py-1 rounded-full">
                 <FaCarOn />
-                My Driving School
+                My Driving Schools
               </span>
             </div>
             <div className="text-center my-8">

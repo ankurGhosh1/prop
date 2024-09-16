@@ -37,7 +37,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <p className="text-xl font-bold">Quick Links</p>
+            <p className="text-xl font-bold">Location</p>
             <ul className="mt-2 space-y-2">
               <li>
                 <Link
@@ -70,7 +70,7 @@ const Footer = () => {
             <ul className="mt-2 space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/people/My-Driving-Schools/61565216012253/"
                   className="opacity-80 hover:opacity-100 transition duration-300"
                 >
                   Facebook
@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 border-t border-gray-700 pt-4 text-center">
           <p>
-            &copy; {new Date().getFullYear()} Driving Classes. All rights
+            &copy; {new Date().getFullYear()} My Driving Schools | All rights
             reserved.
           </p>
         </div>

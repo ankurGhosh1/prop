@@ -27,7 +27,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden sm:flex space-x-8">
+          <div className="hidden sm:flex space-x-8 items-center">
             <Link
               href="/"
               className="text-gray-900 hover:text-blue-600 font-medium"
@@ -42,9 +42,9 @@ const Navbar = () => {
             </Link>
             <Link
               href="/contact"
-              className="text-gray-900 hover:text-blue-600 font-medium"
+              className="bg-dark px-5 py-2 text-white hover:text-blue-600 font-medium rounded-md"
             >
-              Contact
+              Get Listed
             </Link>
           </div>
 
@@ -81,7 +81,7 @@ const Navbar = () => {
               className="block text-gray-900 hover:bg-gray-300 px-4 py-2 font-medium"
               onClick={toggleMobileMenu}
             >
-              Contact
+              Get Listed
             </Link>
           </div>
         )}

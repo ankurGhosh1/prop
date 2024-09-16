@@ -369,7 +369,7 @@ export default function LocationPage({ post }) {
               </p>
             </div>
 
-            <div className="bg-gray rounded-xl p-8">
+            <div className="bg-gray rounded-xl p-8 max-sm:p-3">
               {/* <div className="flex flex-col gap-4 max-sm:m-auto">
                 <div className="flex gap-2 items-center">
                   <Image
@@ -417,6 +417,7 @@ export default function LocationPage({ post }) {
                     width={20}
                     height={20}
                     alt="Reputation"
+                    className="max-sm:hidden"
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
@@ -435,6 +436,7 @@ export default function LocationPage({ post }) {
                     width={20}
                     height={20}
                     alt="Credibility"
+                    className="max-sm:hidden"
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
@@ -453,6 +455,7 @@ export default function LocationPage({ post }) {
                     width={20}
                     height={20}
                     alt="Experience"
+                    className="max-sm:hidden"
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
@@ -471,6 +474,7 @@ export default function LocationPage({ post }) {
                     width={20}
                     height={20}
                     alt="Professionalism"
+                    className="max-sm:hidden"
                   ></Image>
                   <div>
                     <p className="font-bold text-md leading-tight">
