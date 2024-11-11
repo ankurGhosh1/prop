@@ -128,7 +128,7 @@ const Location = () => {
               </div>
             </div>
 
-            {/* <div>
+            <div>
               <div className="flex gap-2">
                 <Image
                   src="/location.png"
@@ -142,9 +142,9 @@ const Location = () => {
                 <Link href="/location/miami" className="text-lg text-dark">
                   Driving school Miami
                 </Link>
-                <Link href="/location/tampa" className="text-lg text-dark">
+                {/* <Link href="/location/tampa" className="text-lg text-dark">
                   Driving school Tampa
-                </Link>
+                </Link> */}
               </div>
             </div>
 
@@ -168,6 +168,7 @@ const Location = () => {
               </div>
             </div>
 
+            {/*
             <div>
               <div className="flex gap-2">
                 <Image

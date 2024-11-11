@@ -231,7 +231,9 @@ export default function LocationPage({ post }) {
         <div className="rounded-xl bg-gray my-36">
           {/* breadcrumbs */}
           <div className="bg-dark flex gap-2 py-3 px-8 rounded-tl-xl rounded-tr-xl text-gray items-center">
-            <p>Home</p>
+            <Link href={"/"}>Home</Link>
+            <IoIosArrowForward size={16} />
+            <Link href={"/location"}>Location</Link>
             <IoIosArrowForward size={16} />
             <p>{post.fields.name}</p>
           </div>
