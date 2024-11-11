@@ -6,4 +6,7 @@
 <url><loc>https://www.mydrivingschools.com/location/new-york</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.mydrivingschools.com/location/los-angeles</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 <url><loc>https://www.mydrivingschools.com/location/chicago</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.mydrivingschools.com/location/miami</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.mydrivingschools.com/location/houston</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.mydrivingschools.com/location/dallas</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

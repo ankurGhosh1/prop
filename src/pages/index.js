@@ -26,6 +26,12 @@ export default function Home() {
             },
           ],
         }}
+        additionalLinkTags={[
+          {
+            rel: "canonical",
+            href: "https://www.mydrivingschools.com/",
+          },
+        ]}
       />
       <Layout>
         <Container>
