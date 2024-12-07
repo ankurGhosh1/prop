@@ -119,98 +119,28 @@ export default function LocationPage({ post }) {
             itemListOrder: "https://schema.org/ItemListOrderDescending",
             name: `${post.fields.meta_title}`,
             url: `https://www.mydrivingschools.com/location/${post.fields.slug}`,
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 1)`]}`,
-                  image: `${post.fields["company_logo (from Company_1)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 2)`]}`,
-                  image: `${post.fields["company_logo (from Company_2)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 3)`]}`,
-                  image: `${post.fields["company_logo (from Company_3)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 4,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 4)`]}`,
-                  image: `${post.fields["company_logo (from Company_4)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 5,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 5)`]}`,
-                  image: `${post.fields["company_logo (from Company_5)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 6,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 6)`]}`,
-                  image: `${post.fields["company_logo (from Company_6)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 7,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 7)`]}`,
-                  image: `${post.fields["company_logo (from Company_7)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 8,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 8)`]}`,
-                  image: `${post.fields["company_logo (from Company_8)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 9,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 9)`]}`,
-                  image: `${post.fields["company_logo (from Company_9)"][0].url}`,
-                },
-              },
-              {
-                "@type": "ListItem",
-                position: 10,
-                item: {
-                  "@type": "Organization",
-                  name: `${post.fields[`company_name (from Company 10)`]}`,
-                  image: `${post.fields["company_logo (from Company_10)"][0].url}`,
-                },
-              },
-            ],
+            itemListElement: Object.keys(post.fields)
+              .filter((key) => key.startsWith("company_name (from Company")) // Filter relevant fields dynamically
+              .map((key, index) => {
+                const companyIndex = key.match(/\d+/)?.[0]; // Extract the company number (e.g., "4" from "Company 4")
+                const companyLogoKey = `company_logo (from Company_${companyIndex})`;
+                const companyName = post.fields[key];
+                const companyLogo = post.fields[companyLogoKey]?.[0]?.url;
+
+                if (companyName && companyLogo) {
+                  return {
+                    "@type": "ListItem",
+                    position: index + 1, // Position starts from 1
+                    item: {
+                      "@type": "Organization",
+                      name: companyName,
+                      image: companyLogo,
+                    },
+                  };
+                }
+                return null; // Exclude if data is missing
+              })
+              .filter(Boolean), // Remove null entries
           }),
         }}
       />

@@ -142,9 +142,9 @@ const Location = () => {
                 <Link href="/location/miami" className="text-lg text-dark">
                   Driving school Miami
                 </Link>
-                {/* <Link href="/location/tampa" className="text-lg text-dark">
+                <Link href="/location/tampa" className="text-lg text-dark">
                   Driving school Tampa
-                </Link> */}
+                </Link>
               </div>
             </div>
 
@@ -167,8 +167,6 @@ const Location = () => {
                 </Link>
               </div>
             </div>
-
-            {/*
             <div>
               <div className="flex gap-2">
                 <Image
@@ -188,7 +186,7 @@ const Location = () => {
                 </Link>
               </div>
             </div>
-
+            {/*
             <div>
               <div className="flex gap-2">
                 <Image
@@ -239,7 +237,7 @@ const Location = () => {
                 </Link>
               </div>
             </div>
-
+              */}
             <div>
               <div className="flex gap-2">
                 <Image
@@ -257,6 +255,23 @@ const Location = () => {
               </div>
             </div>
 
+            <div>
+              <div className="flex gap-2">
+                <Image
+                  src="/location.png"
+                  alt="location"
+                  height={10}
+                  width={30}
+                />
+                <h2 className="text-xl text-dark font-bold">Missouri</h2>
+              </div>
+              <div className="flex flex-col gap-2 py-5 px-3">
+                <Link href="/location/st-louis" className="text-lg text-dark">
+                  Driving school St. Louis
+                </Link>
+              </div>
+            </div>
+            {/*
             <div>
               <div className="flex gap-2">
                 <Image
