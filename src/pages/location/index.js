@@ -249,8 +249,8 @@ const Location = () => {
                 <h2 className="text-xl text-dark font-bold">Arizona</h2>
               </div>
               <div className="flex flex-col gap-2 py-5 px-3">
-                <Link href="/location/pheonix" className="text-lg text-dark">
-                  Driving school Pheonix
+                <Link href="/location/phoenix" className="text-lg text-dark">
+                  Driving school Phoenix
                 </Link>
               </div>
             </div>
